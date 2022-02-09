@@ -13,9 +13,10 @@ if __name__ == '__main__':
     opt.serial_batches = True  # no shuffle
     opt.no_flip = True  # no flip
     opt.display_id = -1  # no visdom display
+    data_loader = CreateDataLoader(opt)
     dataset = data_loader.load_data()
-   # model = create_model(opt)
-  #  model.setup(opt)
+    model = create_model(opt)
+    model.setup(opt)
     # create website
     web_dir = os.path.join(opt.results_dir, opt.name, '%s_%s' % (opt.phase, opt.which_epoch))
     webpage = html.HTML(web_dir, 'Experiment = %s, Phase = %s, Epoch = %s' % (opt.name, opt.phase, opt.which_epoch))
