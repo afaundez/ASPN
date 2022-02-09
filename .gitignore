@@ -1,0 +1,6 @@
+/datasets
+__pycache__
+/checkpoints
+/*.zip
+.DS_Store
+/results
